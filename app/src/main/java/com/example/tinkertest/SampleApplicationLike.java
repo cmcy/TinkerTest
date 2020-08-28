@@ -34,6 +34,8 @@ import com.tencent.tinker.lib.tinker.Tinker;
   * Author : Cybing
   * Date : 2020/8/28 11:06
  */
+@SuppressWarnings("unused")
+//@DefaultLifeCycle(application = "com.example.tinkertest.SampleApplication", flags = ShareConstants.TINKER_ENABLE_ALL, loadVerifyFlag = false)
 public class SampleApplicationLike extends DefaultApplicationLike {
     private static final String TAG = "Tinker.SampleApplicationLike";
 

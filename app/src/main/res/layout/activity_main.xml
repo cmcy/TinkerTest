@@ -17,7 +17,7 @@
             android:id="@+id/tv_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
+            android:text="补丁信息"
             android:textSize="20sp"
             android:textColor="#00A756"
             android:layout_marginBottom="30dp"/>
@@ -37,7 +37,7 @@
         android:layout_marginTop="20dp"
         android:textSize="20sp"
         android:padding="15dp"
-        android:onClick="onClick"
+        android:onClick="loadPatch"
         android:text="加载补丁包"/>
 
     <Button
@@ -48,7 +48,7 @@
         android:layout_marginTop="20dp"
         android:textSize="20sp"
         android:padding="15dp"
-        android:onClick="onClick2"
+        android:onClick="showInfo"
         android:text="查看补丁信息"/>
 
     <Button
@@ -59,7 +59,7 @@
         android:layout_marginTop="20dp"
         android:textSize="20sp"
         android:padding="15dp"
-        android:onClick="onClick3"
+        android:onClick="cleanPatch"
         android:text="卸载补丁"/>
 
 </LinearLayout>

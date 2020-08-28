@@ -14,7 +14,7 @@ import com.tencent.tinker.lib.tinker.TinkerInstaller;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
 import com.tencent.tinker.loader.shareutil.ShareTinkerInternals;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity{
 
     private String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/patch_signed_7zip.apk";
 
@@ -42,30 +42,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    @Override
-    public void onClick(View v) {
-        loadPatch();
-    }
-
-    public void onClick2(View v) {
-        showInfo();
-    }
-
-    public void onClick3(View v) {
-        Tinker.with(getApplicationContext()).cleanPatch();
-    }
-
     /**
      * 加载热补丁插件
      */
-    public void loadPatch() {
+    public void loadPatch(View v) {
         TinkerInstaller.onReceiveUpgradePatch(getApplicationContext(), path);
     }
 
     /**
      * 查看补丁信息
      */
-    private void showInfo() {
+    public void showInfo(View v) {
         // add more Build Info
         final StringBuilder sb = new StringBuilder();
         Tinker tinker = Tinker.with(getApplicationContext());
@@ -85,5 +72,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         textView.setText(sb);
+    }
+
+    /**
+     * 清除补包
+     */
+    public void cleanPatch(View v){
+        Tinker.with(getApplicationContext()).cleanPatch();
     }
 }
